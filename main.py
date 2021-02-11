@@ -38,7 +38,6 @@ enemyY =[]
 enemyX_change = []
 enemyY_change = []
 numOfEnemies = 6
-
 for i in range(numOfEnemies):
     enemyImg.append(pygame.image.load('images/alien.png'))
     enemyX.append(random.randint(0, 640))
@@ -85,7 +84,6 @@ def gameover():
     overText = overfont.render("GAMEOVER", True, (255,255,255))
     screen.blit(overText, (160, 200))
 
-
 # Game Loop
 running = True
 while running:
@@ -128,7 +126,7 @@ while running:
     for i in range(numOfEnemies):
 
         #GAME OVER
-        if enemyY[i] > 200:
+        if enemyY[i] > 350:
             for j in range(numOfEnemies):
                 enemyY[j] = 2000
             gameover()
@@ -162,8 +160,6 @@ while running:
     if bulletState is "fire":
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
-
-    
 
     showScore(textX, textY)#showing score
     player(playerX, playerY)# drawing player
